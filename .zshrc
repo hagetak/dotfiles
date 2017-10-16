@@ -158,10 +158,8 @@ function read_zshrc() {
   ZSHRC_PATH="$HOME/.zshrc.d"
   for file in `find "$ZSHRC_PATH" -follow -type f | grep zshrc`
   do
-    if [ -f "$ZSHRC_PATH/$file" ] ; then
-      echo "read $ZSHRC_PATH/$file and reflect zshrc"
-      source "$ZSHRC_PATH/$file"
-    fi
+    echo "read $file and reflect zshrc"
+    source "$file"
   done
 }
 read_zshrc
