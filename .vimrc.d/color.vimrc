@@ -1,0 +1,2 @@
+" color.vimrc
+colorscheme molokai
