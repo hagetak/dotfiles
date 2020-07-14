@@ -5,6 +5,7 @@ export LANG=ja_JP.UTF-8
 export PATH=/usr/local/bin:/usr/bin
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
 export PATH="$PATH:$HOME/local/bin/"
+export CLOUDSDK_PYTHON=$(which python3)
 
 # 色を使用出来るようにする
 autoload -Uz colors
@@ -163,3 +164,12 @@ function read_zshrc() {
   done
 }
 read_zshrc
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '~/google-cloud-sdk/path.zsh.inc' ]; then . '~/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '~/google-cloud-sdk/completion.zsh.inc' ]; then . '~/google-cloud-sdk/completion.zsh.inc'; fi
