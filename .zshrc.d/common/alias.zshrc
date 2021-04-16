@@ -12,3 +12,7 @@ alias sudo='sudo '
 # グローバルエイリアス
 alias -g L='| less'
 alias -g G='| grep'
+alias ds='docker-sync start && docker-compose -f docker-compose.yml -f docker-compose-sync.yml up'
+
+# git
+alias gs='gs'
